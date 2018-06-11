@@ -1,0 +1,13 @@
+{
+  "name": "M2X",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "m2x": "node m2x"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
