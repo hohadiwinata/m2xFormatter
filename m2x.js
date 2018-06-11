@@ -1,20 +1,18 @@
 var fs = require("fs");
 
-var m2x = fs.readFileSync("M2X.json")
-var jsonM2X = JSON.parse(m2x);
+var rawM2X = fs.readFileSync("M2X.json")
+var M2X = JSON.parse(rawM2X);
 
-var currentRow=0;
+M2X50 = M2X.splice(0,50) //Get the first 50 element of the array
 
-
-
-console.log(jsonM2X[0].timestamp.slice(0,18))
-console.log(jsonM2X[1].timestamp.slice(0,18))
-
-
-console.log("Removing array 1")
-
-removed=jsonM2X.splice(1,1)
-
-
-console.log(jsonM2X[1].timestamp.slice(0,18))
-console.log(removed)
+M2X50.forEach(function(soil,index) {
+    currentTimestamp = M2X50[index].timestamp.slice(0,18)
+    if (index < M2X50.length - 1) {
+        nextTimestamp = M2X50[index + 1].timestamp.slice(0,18)
+        //Find duplicate at index number
+        if(currentTimestamp == nextTimestamp){
+        console.log("Duplicate found at index: " + index)
+        }
+    }
+    
+})
