@@ -26,8 +26,8 @@ M2XTrim.forEach(function (soil, index) {
                 currentObject.moisture = nextObject.moisture
                 // console.log("Copied moisture to index: " + nextObject.moisture)
             }
-            if (nextObject.Battery != '') {
-                currentObject.Battery = nextObject.Battery
+            if (nextObject.battery != '') {
+                currentObject.battery = nextObject.battery
                 // console.log("Copied Battery to index: " + nextObject.Battery)
             }
             M2XTrim.splice(index + 1, 1) //Remove the next object from array
