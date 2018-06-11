@@ -11,10 +11,18 @@ M2X50.forEach(function(soil,index) {
         nextTimestamp = M2X50[index + 1].timestamp.slice(0,18)
         //Find duplicate at index number
         if(currentTimestamp == nextTimestamp){ //If there is duplicate
-            console.log("Duplicate found at index: " + index)
-            if(M2X50[index].temperature == '') {
+            console.log("Duplicate found at index: " + index) //print the duplicate at index
+            if(M2X50[index+1].temperature != '') {
                 M2X50[index].temperature =  M2X50[index+1].temperature
                 console.log("Copied temperature to index: " + M2X50[index+1].temperature)
+            }  
+            if(M2X50[index+1].moisture != '') {
+                M2X50[index].moisture =  M2X50[index+1].moisture
+                console.log("Copied moisture to index: " + M2X50[index+1].moisture)
+            }  
+            if(M2X50[index+1].Battery != '') {
+                M2X50[index].Battery =  M2X50[index+1].Battery
+                console.log("Copied Battery to index: " + M2X50[index+1].Battery)
             }  
         }
     }
