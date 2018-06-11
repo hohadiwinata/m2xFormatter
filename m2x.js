@@ -24,7 +24,10 @@ M2X50.forEach(function(soil,index) {
                 M2X50[index].Battery =  M2X50[index+1].Battery
                 console.log("Copied Battery to index: " + M2X50[index+1].Battery)
             }  
+            M2X50.splice(index+1,1)
         }
     }
     
 })
+
+console.log(M2X50)
