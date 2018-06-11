@@ -1,0 +1,3 @@
+#ignore M2X json data file
+*.json
+*.csv
