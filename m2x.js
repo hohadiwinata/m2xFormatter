@@ -1,6 +1,9 @@
 var fs = require("fs");
 
-var rawM2X = fs.readFileSync("M2X.json")
+//Use synthax node m2x input.json output.json
+var myArgs = process.argv.slice(2);
+
+var rawM2X = fs.readFileSync(myArgs[0])
 var M2X = JSON.parse(rawM2X);
 
 M2XTrim = M2X.splice(0,1000) //Get the first 1000 element of the array
@@ -36,7 +39,7 @@ M2XTrim.forEach(function(soil,index) {
 jsonM2X = JSON.stringify(M2XTrim);
 
 // write to file
-fs.writeFile('Merged.json', jsonM2X, 'utf8', function(err) {
+fs.writeFile(myArgs[1], jsonM2X, 'utf8', function(err) {
     if(err) console.error(err);
 
     console.log("File saved successfully")
