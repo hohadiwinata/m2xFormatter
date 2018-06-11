@@ -10,8 +10,12 @@ M2X50.forEach(function(soil,index) {
     if (index < M2X50.length - 1) {
         nextTimestamp = M2X50[index + 1].timestamp.slice(0,18)
         //Find duplicate at index number
-        if(currentTimestamp == nextTimestamp){
-        console.log("Duplicate found at index: " + index)
+        if(currentTimestamp == nextTimestamp){ //If there is duplicate
+            console.log("Duplicate found at index: " + index)
+            if(M2X50[index].temperature == '') {
+                M2X50[index].temperature =  M2X50[index+1].temperature
+                console.log("Copied temperature to index: " + M2X50[index+1].temperature)
+            }  
         }
     }
     
